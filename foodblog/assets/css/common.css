@@ -1,0 +1,174 @@
+/* 모든 페이지에서 사용될 공통적인 내용을 정의 */
+
+/*---------------------------------------
+*공통
+*----------------------------------------*/
+
+*{
+    font-family: "Noto Sans KR";
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* header, main, footer 영역 안에서 내용의 넓이를 제한하는 박스 */
+.content-container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
+/*---------------------------------------
+*상단 영역
+*----------------------------------------*/
+.header{
+    /* 배경색 넣어주는 이유 >> position:fixed니깐 
+    다른 영역 위에 떠 있으므로 아래쪽에 스크롤 되는 부분 보이니깐 흰색 적용 */
+    background: #fff;   
+    /* 그림자 */
+    box-shadow: 0 1px 3px #0002;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    /* ========== 한번 더 체크 ========== */
+    width: 100%; /*position:fixed; 부모의 영역을 가득채우지 못함.. 그래서 width:100%; 꼭 줘야함*/
+}
+
+/* 상단 영역 내의 컨테이너에 속한 아이템들의 배치 구성 */
+.header .content-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 양쪽의 아이콘 박스 공통 속성 */
+.header .icon-button{
+    font-size: 24px;
+    font-weight: 900;
+    padding: 16px;
+    /* background: yellow; */
+    cursor: pointer;
+}
+
+.header .icon-button:hover{
+    background: #ddd;
+    color: #fff;
+}
+
+/* 사이트 제목 */
+.header .logo{
+    font-size: 26px;
+    font-weight: 600;
+    /* ========== 한번 더 체크 ========== */
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+/*---------------------------------------
+*내용 영역
+*----------------------------------------*/
+.main{
+    background: #fff;
+
+    /* 상단바에 가려지는 만큼 여백 확보 */
+    padding-top: 57px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+*하단 영역
+*----------------------------------------*/
+.footer{
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.footer .content-container{
+    display: flex;
+
+}
+.footer .content-container .footer-item{
+    /* 각 영역이 공간을 동일 비율로 나누어 갖도록 설정 */
+    flex: 1;
+    padding: 15px;
+    /* background: yellow; */
+}
+.footer .content-container .footer-item h3{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 22px 0;
+    /* 영어 대문자 변환 <-> lowercase*/
+    text-transform: uppercase;
+    /* background: orange; */
+}
+.footer .content-container .footer-item:nth-child(1) p{
+    font-size: 15px;
+    line-height: 150%;
+    font-weight: 300;
+}
+
+/* blog post 영역 */
+.footer .content-container .footer-item:nth-child(2) a{
+    /* ========== 한번 더 체크 ========== */
+    display: flex;
+    margin: 20px 0;
+    padding: 0 10px;
+    /* 썸네일과 텍스트 세로축 중앙배치 */
+    align-items: center;
+    /* background: orange;  */
+}
+.footer .content-container .footer-item:nth-child(2) a img{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.footer .content-container .footer-item:nth-child(2) a .blog-post-title{
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.footer .content-container .footer-item:nth-child(2) a .blog-post-content{
+    line-height: 1.2;
+}
+
+/* POPULAR TAGS 영역 */
+.footer .content-container .footer-item:nth-child(3) .tags li{
+    display: inline-block;
+    background: #616161;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.footer .content-container .footer-item:nth-child(3) .tags li.black{
+    background: #000;
+}
+
+@media only screen and (max-width:768px) {
+    /* 모바일 해상도에서 세로 정렬 */
+    .footer .content-container{
+        flex-direction: column;
+    }
+}

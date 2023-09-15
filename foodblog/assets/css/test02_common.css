@@ -1,0 +1,281 @@
+/* 모든 페이지에서 사용될 공통적인 내용을 정의 */
+
+/*---------------------------------------
+*공통
+*----------------------------------------*/
+
+*{
+    font-family: "Noto Sans KR";
+    box-sizing: border-box;
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* header, main, footer 영역 안에서 내용의 넓이를 제한하는 박스 */
+.content-container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*---------------------------------------
+*상단영역
+*----------------------------------------*/
+.header{
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+}
+.header .content-container{
+    display: flex;
+    justify-content: space-between;
+}
+.header .content-container a{
+    display: block;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.header .content-container .icon-button{
+    font-size: 20px;
+    font-weight: 600;
+}
+.header .content-container .icon-button:hover{
+    background: #333;
+    color: #fff;
+}
+
+/*---------------------------------------
+*내용영역
+*----------------------------------------*/
+.main{
+    padding-top:52px;
+    background: #fff;
+}
+
+.food-gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.food-gallery .food-item{
+    flex: none;
+    width: 25%;
+    padding: 10px 20px;
+
+}
+.food-gallery .food-item a{
+    display: block;
+}
+
+.food-gallery .food-item a .img-wrapper{
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+.food-gallery .food-item a .img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.food-gallery .food-item a:hover .img-wrapper img{
+    transform: scale(1.1, 1.1);
+}
+
+.food-gallery .food-item a .food-content{
+    text-align: center;
+    padding: 10px;
+    /* background: orange; */
+}
+.food-gallery .food-item a .food-content h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 130%;
+}
+.food-gallery .food-item a .food-content p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 130%;
+}
+
+
+/* 페이징넘버 */
+.pagenation{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.pagenation li{
+    width: 36px;
+    height: 36px;
+    margin: 0 8px;
+}
+.pagenation li a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.pagenation li.active{
+    background: #000;
+}
+.pagenation li.active a{
+    color: #fff;
+}
+.pagenation li a:hover{
+    background:rgba(0,0,0,0.2);
+}
+
+
+/* 구분선 */
+.divider{
+    margin: 60px 0;
+    width: auto;
+    border-top: 1px solid #ddd;
+    border-bottom: 0;
+}
+
+/* 32 26 18 16 */
+
+/* 쉐프 소개 */
+.profile-container{
+  text-align: center;
+}
+.profile-container h2{
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.profile-container img{
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.profile-container h3{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 120%;
+    margin-bottom: 20px;
+    /* background: yellow; */
+}
+.profile-container  h4{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 130%;
+    margin-bottom: 20px;
+}
+.profile-container p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 150%;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+*하단영역
+*----------------------------------------*/
+.footer{
+    border-top: 1px solid #ddd;
+
+}
+.footer .content-container{
+    display: flex;
+    padding:15px;
+}
+.footer .footer-item{
+    flex: 1;
+    padding: 15px 20px;
+}
+
+.footer .footer-item h3{
+    font-size: 20px;
+    margin: 22px 0;
+}
+.footer .footer-item p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 120%;
+}
+.footer .footer-item:nth-child(2) a{
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.footer .footer-item:nth-child(2) a:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.footer .footer-item:nth-child(2) a img{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.footer .footer-item:nth-child(2) a .blog-title{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer .footer-item:nth-child(2) a .blog-desc{
+    font-size: 16px;
+    line-height: 150%;
+}
+.footer .footer-item:nth-child(3) ul{
+    padding: 10px 15px;
+} 
+.footer .footer-item:nth-child(3) .tags li{
+    display: inline-block;
+    padding: 8px 13px;
+    background: #ddd;
+    margin-bottom: 12px;
+    border-radius: 60px;
+}
+.footer .footer-item:nth-child(3) .tags li.black{
+    background: #333;
+    color: #fff;
+}
+
+
+/* ===================반응형 ======================= */
+@media only screen and (min-width:600px) and (max-width:767px){
+    .food-gallery .food-item{
+        width:50%;
+    }
+}
+
+@media only screen and (max-width:599px){
+    .food-gallery .food-item{
+        width:100%;
+    }
+}
+
